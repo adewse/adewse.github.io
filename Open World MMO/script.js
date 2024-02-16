@@ -10,8 +10,8 @@ function removeAdd(){
     g_canvas = document.querySelector('#unity-canvas');
     // выводим значение тэга в консоль разработчика (выдаёт null)
     console.log(g_canvas);
-    // добавляем новый стиль, чтобы футер с кнопками "Группа игры вконтакте" и "Форум" пропал (выдаёт ошибку в связи с предыдущей) 
-    g_canvas.style = 'height: 100% !important';
+    // добавляем новый стиль, чтобы футер с кнопками "Группа игры вконтакте" и "Форум" пропал (выдаёт ошибку в связи с предыдущей, так что пока зумутирую нижнюю строку) 
+    //g_canvas.style = 'height: 100% !important';
 
     // находим шапку вконтакте
     top_popup = document.querySelector('#page_header_cont');
