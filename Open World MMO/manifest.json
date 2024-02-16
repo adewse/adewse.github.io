@@ -1,0 +1,12 @@
+{
+   "manifest_version": 2,
+   "name": "AddRemover",
+   "version": "1.0",
+   "description": "Реклама не мешает игровому процессу",
+   "content_scripts": [
+       {
+           "matches": [ "https://vk.com/app*" ],
+           "js": [ "script.js" ]
+       }
+   ]
+}
