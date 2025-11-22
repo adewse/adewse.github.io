@@ -1,17 +1,52 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-    <head>
-        <style>
-            html, body{
-                width: 100%;
-                height: 100%;
-            }
-            body{
-                background-color:aqua;
-            }
-        </style>
-    </head>
-    <body>
-    <video poster="placeholder.png" ></video>
-    </body>
+<head>
+<style>
+.element {
+  background-color: lightyellow;
+}
+
+.element:fullscreen {
+  background-color: lightpink;
+}
+.element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  padding: 1.2em;
+}
+</style>
+</head>
+
+<body>
+<div class="element">
+  <h1><code>:fullscreen</code> pseudo-class demo</h1>
+
+  <p>
+    This demo uses the <code>:fullscreen</code> pseudo-class to automatically
+    change the background color of the <code>.element</code> div.
+  </p>
+
+  <p>
+    Normally, the background is light yellow. In fullscreen mode, the background
+    is light pink.
+  </p>
+
+  <button class="toggle">Toggle Fullscreen</button>
+</div>
+
+<script>
+document.querySelector(".toggle").addEventListener("click", (event) => {
+  if (document.fullscreenElement) {
+    // If there is a fullscreen element, exit full screen.
+    document.exitFullscreen();
+    return;
+  }
+  // Make the .element div fullscreen.
+  document.querySelector(".element").requestFullscreen();
+});
+</script>
+</body>
 </html>
