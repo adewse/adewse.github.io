@@ -96,7 +96,7 @@ let nextcol = function(){
     if(i == colors.length){
         i = 0;
     }else(i++)
-    document.querySelector(".element").style = `background-color:  + ${colors[i]}`;
+    document.querySelector(".element").style = `background-color: ${colors[i]}`;
     document.querySelector(".toggle").innerText = `${i}`;
     console.log(i);
 }
@@ -106,7 +106,7 @@ let prevcol = function(){
         i = colors.length-1;
     }
     else{i--};
-    document.querySelector(".element").style = `background-color:  + ${colors[i]}`;
+    document.querySelector(".element").style = `background-color: ${colors[i]}`;
     document.querySelector(".toggle").innerText = `${i}`;
     console.log(i)
 }
@@ -139,4 +139,5 @@ document.querySelector(".dstrelka").addEventListener("click", darkcol);
 </script>
 </body>
 </html>
+
 
