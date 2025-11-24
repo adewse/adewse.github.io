@@ -3,11 +3,11 @@
 <head>
 <style>
 .element {
-  background-color: lightyellow;
+  background-color: black;
 }
 
 .element:fullscreen {
-  background-color: aqua;
+  background-color: black;
 }
 .element {
   display: flex;
@@ -17,6 +17,30 @@
   font-family: sans-serif;
   padding: 1.2em;
 }
+.box {
+  display: flex;
+  flex-flow: row wrap;
+}
+.btleft{
+    border;
+    background-color: #0f0;
+    flex: 1 3 auto;
+}
+.btright{
+    border;
+    background-color: #0f0;
+    flex: 2 3 auto;
+}
+.btup{
+    border;
+    background-color: #0f0;
+    flex: 3 3 auto;
+}
+.btdown{
+    border;
+    background-color: #0f0;
+    flex: 1 3 auto;
+}
 </style>
 </head>
 
@@ -24,18 +48,94 @@
 <div class="element">
 <button class="toggle">Toggle Fullscreen</button>
 </div>
-
-<script>
+<div class="box">
+  <div class="btleft">left</div>
+  <div class="btright">right</div>
+  <div class="btup">up</div>
+  <div class="btdown">down</div>
+</div>
+<button class="ustrelka">light</button>
+<button class="dstrelka">dark</button>
+<button class="rstrelka">prev</button>
+<button class="lstrelka">next</button>
+<script> //  полноэкранный режим
 document.querySelector(".toggle").addEventListener("click", (event) => {
   if (document.fullscreenElement) {
     // If there is a fullscreen element, exit full screen.
     document.exitFullscreen();
-    document.remove();
+    document.querySelector(".toggle").style = "opacity: 100%";
     return;
   }
   // Make the .element div fullscreen.
   document.querySelector(".element").requestFullscreen();
+  document.querySelector(".toggle").style = "opacity: 10%;";
 });
+
+</script>
+
+<script>  //  смена цвета
+
+let colors = [
+"#ff0000",
+"#ff7f00",
+"#ffff00",
+"#7fff00",
+"#00ff00",
+"#00ff7f",
+"#00ffff",
+"#007fff",
+"#0000ff",
+"#7f00ff",
+"#ff00ff",
+"#ff007f"
+]
+
+let i = -1;
+
+let nextcol = function(){
+    if(i == colors.length){
+        i = 0;
+    }else(i++)
+    document.querySelector(".element").style = background-color:  + ${colors[i]};
+    document.querySelector(".toggle").innerText = ${i};
+    console.log(i);
+}
+
+let prevcol = function(){
+    if(i == -1){
+        i = colors.length-1;
+    }
+    else{i--};
+    document.querySelector(".element").style = background-color:  + ${colors[i]};
+    document.querySelector(".toggle").innerText = ${i};
+    console.log(i)
+}
+
+document.querySelector(".lstrelka").addEventListener("click", nextcol);
+
+document.querySelector(".rstrelka").addEventListener("click", prevcol);
+</script>
+<script>  //  смена яркости
+let a = 0;
+
+let lightcol = function(){
+    if(a == 100){
+        a = 100;
+    }
+    else{a+=10};
+    document.querySelector(".element").style = background-color: ${colors[i]}; opacity: ${a}%;
+}
+
+let darkcol = function(){
+    if(a == 0){
+        a = 100;
+    }
+    else{a-=10};
+    document.querySelector(".element").style = background-color: ${colors[i]}; opacity: ${a}%;
+}
+
+document.querySelector(".ustrelka").addEventListener("click", lightcol);
+document.querySelector(".dstrelka").addEventListener("click", darkcol);
 </script>
 </body>
 </html>
