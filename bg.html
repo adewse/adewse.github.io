@@ -96,8 +96,8 @@ let nextcol = function(){
     if(i == colors.length){
         i = 0;
     }else(i++)
-    document.querySelector(".element").style = background-color:  + ${colors[i]};
-    document.querySelector(".toggle").innerText = ${i};
+    document.querySelector(".element").style = `background-color:  + ${colors[i]}`;
+    document.querySelector(".toggle").innerText = `${i}`;
     console.log(i);
 }
 
@@ -106,8 +106,8 @@ let prevcol = function(){
         i = colors.length-1;
     }
     else{i--};
-    document.querySelector(".element").style = background-color:  + ${colors[i]};
-    document.querySelector(".toggle").innerText = ${i};
+    document.querySelector(".element").style = `background-color:  + ${colors[i]}`;
+    document.querySelector(".toggle").innerText = `${i}`;
     console.log(i)
 }
 
@@ -123,7 +123,7 @@ let lightcol = function(){
         a = 100;
     }
     else{a+=10};
-    document.querySelector(".element").style = background-color: ${colors[i]}; opacity: ${a}%;
+    document.querySelector(".element").style = `background-color: ${colors[i]}; opacity: ${a}%`;
 }
 
 let darkcol = function(){
@@ -131,7 +131,7 @@ let darkcol = function(){
         a = 100;
     }
     else{a-=10};
-    document.querySelector(".element").style = background-color: ${colors[i]}; opacity: ${a}%;
+    document.querySelector(".element").style = `background-color: ${colors[i]}; opacity: ${a}%`;
 }
 
 document.querySelector(".ustrelka").addEventListener("click", lightcol);
@@ -139,3 +139,4 @@ document.querySelector(".dstrelka").addEventListener("click", darkcol);
 </script>
 </body>
 </html>
+
