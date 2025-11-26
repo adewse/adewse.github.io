@@ -220,7 +220,15 @@
         document.querySelector(".ustrelka").addEventListener("click", lightcol);
         document.querySelector(".dstrelka").addEventListener("click", darkcol);
     </script>
+    <script>
+        document.addEventListener('keydown', (event) => {
+          if(event.code === 'ArrowLeft'){
+            nextcol();
+          }
+        });
+    </script>
 
 
 </body>
+
 
