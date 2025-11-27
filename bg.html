@@ -222,7 +222,22 @@
     </script>
     <script>
         document.addEventListener('keydown', (event) => {
+          if(event.code === 'ArrowUp'){
+            lightcol();
+          }
+        });
+        document.addEventListener('keydown', (event) => {
           if(event.code === 'ArrowLeft'){
+            prevcol();
+          }
+        });
+        document.addEventListener('keydown', (event) => {
+          if(event.code === 'ArrowDown'){
+            darkcol();
+          }
+        });
+        document.addEventListener('keydown', (event) => {
+          if(event.code === 'ArrowRight'){
             nextcol();
           }
         });
@@ -230,5 +245,7 @@
 
 
 </body>
+</html>
+
 
 
