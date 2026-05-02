@@ -1,4 +1,4 @@
-# profile-title: adewse
+# profile-title: [adewse_obfs]
 # profile-update-interval: 5
 # Date/Time: 2026-05-02 / 09:08 (Moscow)
 # Количество: 487
